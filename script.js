@@ -49,22 +49,24 @@ const bird = {
 };
 
 // Pipe Object
-function Pipe(x) {
-    this.x = x;
-    this.topHeight = Math.floor(Math.random() * (canvasHeight / 2));
-    this.bottomHeight = canvasHeight - this.topHeight - pipeGap;
+class Pipe {
+    constructor(x) {
+        this.x = x;
+        this.topHeight = Math.floor(Math.random() * (canvasHeight / 2));
+        this.bottomHeight = canvasHeight - this.topHeight - pipeGap;
 
-    this.draw = function() {
-        ctx.fillStyle = "green";
-        // Top Pipe
-        ctx.fillRect(this.x, 0, pipeWidth, this.topHeight);
-        // Bottom Pipe
-        ctx.fillRect(this.x, canvasHeight - this.bottomHeight, pipeWidth, this.bottomHeight);
-    };
+        this.draw = function () {
+            ctx.fillStyle = "green";
+            // Top Pipe
+            ctx.fillRect(this.x, 0, pipeWidth, this.topHeight);
+            // Bottom Pipe
+            ctx.fillRect(this.x, canvasHeight - this.bottomHeight, pipeWidth, this.bottomHeight);
+        };
 
-    this.update = function() {
-        this.x -= pipeSpeed;
-    };
+        this.update = function () {
+            this.x -= pipeSpeed;
+        };
+    }
 }
 
 // Game Loop
