@@ -1,4 +1,4 @@
 # flappy-bird
 Flappy bird clone
-## interfacce
+## interface
 ![Alt text](image.png)
