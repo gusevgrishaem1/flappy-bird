@@ -21,6 +21,9 @@ let pipeSpeed = 2;
 
 // Controls
 let isGameOver = false;
+let score = 0
+
+document.getElementById("score").textContent = score
 
 // Handle Bird Movement (Jump)
 document.addEventListener('click', function() {
@@ -99,6 +102,8 @@ function gameLoop() {
         if (pipe.x + pipeWidth < 0) {
             pipes.splice(i, 1);
             i--;
+            score++;
+            document.getElementById("score").textContent = score
         }
     }
 
@@ -121,6 +126,8 @@ function resetGame() {
     bird.y = birdY
     pipes = [];
     isGameOver = false;
+    score = 0;
+    document.getElementById("score").textContent = score
     requestAnimationFrame(gameLoop);
 }
 
@@ -129,8 +136,10 @@ function displayGameOver() {
     ctx.fillStyle = "black";
     ctx.font = "30px Arial";
     ctx.fillText("Game Over!", canvasWidth / 4, canvasHeight / 2);
+    ctx.font = "30px Arial";
+    ctx.fillText("Your Score: " + score, canvasWidth / 4, canvasHeight / 2 + 40);
     ctx.font = "20px Arial";
-    ctx.fillText("Click to Restart", canvasWidth / 4, canvasHeight / 2 + 40);
+    ctx.fillText("Click to Restart", canvasWidth / 4, canvasHeight / 2 + 80);
 }
 
 // Start the game

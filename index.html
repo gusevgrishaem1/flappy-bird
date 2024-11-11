@@ -12,12 +12,20 @@
             align-items: center;
             height: 100vh;
             background-color: #70c5ce;
+            flex-direction: column;
         }
         canvas {
             border: 2px solid black;
         }
+        h1 {
+            margin: 20px;
+            font-size: 48px;
+            color: white;
+            user-select: none;
+        }
     </style>
     <body>
+        <h1 id = "score"></h1>
         <canvas id="gameCanvas" width="500" height="600">
         </canvas>
         <script src="script.js"></script>
