@@ -1,4 +1,4 @@
 # flappy-bird
 Flappy bird clone
 ## interface
-![Alt text](image.png)
+![image](https://github.com/user-attachments/assets/6e4ee282-2310-40fe-accc-db2d325516ca)
