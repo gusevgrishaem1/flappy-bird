@@ -31,16 +31,20 @@ document.addEventListener('click', function() {
     }
 });
 
+const img = new Image();
+
+img.src = "flappy-bird.png"
+
 // Bird Object
 const bird = {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
     x: 50,
     y: birdY,
     color: "yellow",
     draw: function() {
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, this.x, this.y, this.width, this.height);
     },
     update: function() {
         this.y += birdVelocity;
